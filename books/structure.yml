@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    - name: [STRUCTURE] create dirs
+      file:
+        path:  '{{ item.path }}'
+        state: directory
+        mode: '{{ item.mode }}'
+        owner: '{{ item.owner }}'
+        group: '{{ item.group }}'
+      loop:
+        - { path: '/data', mode: '0755', owner: 'root', group: 'root'}

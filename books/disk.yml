@@ -1,0 +1,21 @@
+---
+- hosts: all
+  tasks:
+    - name: [DISK] create partition
+      parted:
+        device: /dev/sdb
+        number: 1
+        flags: [ lvm ]
+        state: present
+
+     - name: [DISK] create filesystem
+       filesystem:
+         fstype: ext4
+         dev: /dev/sdb1
+
+     - name: [DISK] mount disk
+       mount:
+         fstype: ext4
+         src: /dev/sdb1
+         path: /data
+         state: mounted
