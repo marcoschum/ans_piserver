@@ -9,4 +9,7 @@
         owner: '{{ item.owner }}'
         group: '{{ item.group }}'
       loop:
-        - { path: '/data', mode: '0755', owner: 'root', group: 'root'}
+        - { path: '/data', mode: '0766', owner: 'root', group: 'root'}
+        - { path: '/data/transmission', mode: '0755', owner: 'debian-transmission', group: 'root'}
+        - { path: '/data/transmission/inprogress', mode: '0755', owner: 'debian-transmission', group: 'root'}
+        - { path: '/data/transmission/complete', mode: '0755', owner: 'debian-transmission', group: 'root'}

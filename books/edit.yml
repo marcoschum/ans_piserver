@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    - name: [EDIT] Edit files
+      lineinfile:
+        path: "{{ item.path }}"
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
+        state: present
+      loop:
+        - { path: '/etc/transmission-daemon/setting.json', regexp: '^\ "download-dir":', line: '\ "download-dir":\ "\/data\transmission/complete",' }
+        - { path: '/etc/transmission-daemon/setting.json', regexp: '^\ "incomplete-dir":', line: '\ "incomplete-dir":\ "\/data\transmission/inprogress",' }
