@@ -1,12 +1,14 @@
 ---
 - hosts: all
   tasks:
-    - name: [EDIT] Edit files
+    - name: EDIT edit files
       lineinfile:
         path: "{{ item.path }}"
         regexp: "{{ item.regexp }}"
         line: "{{ item.line }}"
         state: present
       loop:
-        - { path: '/etc/transmission-daemon/setting.json', regexp: '^\ "download-dir":', line: '\ "download-dir":\ "\/data\transmission/complete",' }
-        - { path: '/etc/transmission-daemon/setting.json', regexp: '^\ "incomplete-dir":', line: '\ "incomplete-dir":\ "\/data\transmission/inprogress",' }
+        - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "download-dir":', line: '    "download-dir": "/data/transmission/complete",' }
+        - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "incomplete-dir":', line: '    "incomplete-dir": "/data/transmission/inprogress",' }
+        - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-whitelist":', line: '    "rpc-whitelist": "192.168.0.*",' }
+        - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "umask":', line: '    "umask": "2",' }

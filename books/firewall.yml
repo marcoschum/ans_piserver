@@ -1,7 +1,7 @@
 ---
 - hosts: all
   tasks:
-    - name: [FIREWALL] enable rules for internal
+    - name: FIREWALL enable rules for internal
       firewalld:
         zone: internal
         port: '{{ item.port }}'

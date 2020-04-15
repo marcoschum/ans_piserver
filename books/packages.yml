@@ -1,7 +1,7 @@
 ---
 - hosts: all
   tasks:
-    - name: [PACKAGES] install
+    - name: PACKAGES install
       apt:
         name: '{{ item.name }}'
         state: '{{ item.state }}'
@@ -15,10 +15,10 @@
         - { name: 'chromium-browser', state: 'latest'}
 
 
-    - name: [PACKAGES] autoremove
+    - name: PACKAGES autoremove
       apt:
         autoremove: yes
 
-    - name: [PACKAGES] clean
+    - name: PACKAGES clean
       apt:
         autoclean: yes
