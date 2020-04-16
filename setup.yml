@@ -2,7 +2,13 @@
 - import_playbook: books/packages.yml
 - import_playbook: books/structure.yml
 - import_playbook: books/disk.yml
+- import_playbook: books/copy.yml
 - import_playbook: books/edit.yml
 # - import_playbook: books/network.yml
 - import_playbook: books/firewall.yml
 - import_playbook: books/services.yml
+
+
+# TODO:
+# smbpasswd -a pi # set password for user pi for smb
+# make sure smb.conf will be replaced

@@ -1,0 +1,14 @@
+--
+- hosts: all
+  vars:
+    files_repo: ../files
+  tasks:
+    - name: COPY copy files
+      copy:
+        src: "{{ files_repo }}/{{ item.file }}"
+        dest: "{{ item.dest }}"
+        mode: "{{ item.mode }}"
+        owner: "{{ item.owner }}"
+        group: "{{ item.group }}"
+      loop:
+         - { file: 'smb.conf' dest: '/etc/samba/smb.conf', mode: '0644', owner: 'root', group: 'root' }
