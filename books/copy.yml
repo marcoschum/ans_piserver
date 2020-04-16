@@ -1,4 +1,4 @@
---
+---
 - hosts: all
   vars:
     files_repo: ../files
@@ -11,4 +11,4 @@
         owner: "{{ item.owner }}"
         group: "{{ item.group }}"
       loop:
-         - { file: 'smb.conf' dest: '/etc/samba/smb.conf', mode: '0644', owner: 'root', group: 'root' }
+         - { file: 'smb.conf', dest: '/etc/samba/smb.conf', mode: '0644', owner: 'root', group: 'root' }

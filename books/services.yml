@@ -7,5 +7,5 @@
         state: '{{ item.state }}'
         enabled: '{{ item.enabled }}'
       loop:
-        - { name: 'samba_daemon', state: 'started', enabled: 'yes'}
+        - { name: 'smbd', state: 'started', enabled: 'yes'}
         - { name: 'transmission-daemon', state: 'started', enabled: 'yes'}

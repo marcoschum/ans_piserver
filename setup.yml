@@ -5,7 +5,7 @@
 - import_playbook: books/copy.yml
 - import_playbook: books/edit.yml
 # - import_playbook: books/network.yml
-- import_playbook: books/firewall.yml
+#- import_playbook: books/firewall.yml
 - import_playbook: books/services.yml
 
 

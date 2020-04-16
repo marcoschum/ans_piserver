@@ -7,8 +7,8 @@
         port: '{{ item.port }}'
         permanent: yes
         state: enabled
-        loop:
-          - { port: '9091/tcp'}
-          - { port: '443/tcp'}
-          - { port: '80/tcp'}
-          - { port: '22/tcp'}
+      loop:
+        - { port: '9091/tcp'}
+        - { port: '443/tcp'}
+        - { port: '80/tcp'}
+        - { port: '22/tcp'}
