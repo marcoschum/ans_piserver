@@ -10,9 +10,9 @@
         - { name: 'transmission-daemon', state: 'latest'}
         - { name: 'samba', state: 'latest'}
         - { name: 'samba-common-bin', state: 'latest'}
-        #- { name: 'samba-client', state: 'latest'}
-        #- { name: 'cifs-utils', state: 'latest'}
         - { name: 'chromium-browser', state: 'latest'}
+        - { name: 'httpd', state: 'latest'}
+        - { name: 'ffmpeg', state: 'latest'}
 
 
     - name: PACKAGES autoremove

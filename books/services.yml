@@ -1,7 +1,7 @@
 ---
 - hosts: all
   tasks:
-    - name: SERVICES manage services
+    - name: SERVICES enable and start services
       service:
         name: '{{ item.name }}'
         state: '{{ item.state }}'
@@ -9,3 +9,9 @@
       loop:
         - { name: 'smbd', state: 'started', enabled: 'yes'}
         - { name: 'transmission-daemon', state: 'started', enabled: 'yes'}
+
+
+    - name: SERVICES create user for service SMB
+      shell: "(echo {{ item.smbpasswd }}; echo {{ item.smbpasswd }}) | smbpasswd -s -a {{ item.name }}"
+      loop:
+        - { name: 'pi', smbpasswd: 'pipass'}

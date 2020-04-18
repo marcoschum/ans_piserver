@@ -12,3 +12,9 @@
         group: "{{ item.group }}"
       loop:
          - { file: 'smb.conf', dest: '/etc/samba/smb.conf', mode: '0644', owner: 'root', group: 'root' }
+         - { file: 'bashrc_global', dest: '/data/config/bashrc_global', mode: '0644', owner: 'root', group: 'root' }
+
+    - name: COPY sync var/www
+      synchronize:
+        src: "{{ files_repo }}/www"
+        dest: "/var/www/"

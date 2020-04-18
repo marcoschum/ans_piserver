@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - name: USER appending to group
+      user: name={{ item.user }}
+            groups={{ item.group }}
+            shell=/bin/bash
+            append=yes
+      loop:
+        - { user: 'pi', group: 'debian-transmission' }
