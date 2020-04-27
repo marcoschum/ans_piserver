@@ -13,8 +13,16 @@
       loop:
          - { file: 'smb.conf', dest: '/etc/samba/smb.conf', mode: '0644', owner: 'root', group: 'root' }
          - { file: 'bashrc_global', dest: '/data/config/bashrc_global', mode: '0644', owner: 'root', group: 'root' }
+         - { file: 'apache2.conf', dest: '/etc/apache2/apache2.conf', mode: '0644', owner: 'root', group: 'root' }
 
-    - name: COPY sync var/www
+    - name: COPY sync var/www/html
       synchronize:
-        src: "{{ files_repo }}/www"
+        src: "{{ files_repo }}/html"
         dest: "/var/www/"
+
+    - name: COPY set owner+group for var/www/html
+      file:
+        dest: "/var/www"
+        owner: "www-data"
+        group: "www-data"
+        recurse: yes

@@ -11,7 +11,7 @@
         - { name: 'samba', state: 'latest'}
         - { name: 'samba-common-bin', state: 'latest'}
         - { name: 'chromium-browser', state: 'latest'}
-        - { name: 'httpd', state: 'latest'}
+        - { name: 'apache2', state: 'latest'}
         - { name: 'ffmpeg', state: 'latest'}
 
 
