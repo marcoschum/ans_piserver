@@ -1,6 +1,7 @@
 ---
 - hosts: all
   tasks:
+    - include_vars: ../vars/global.yml
     - name: SERVICES enable and start services
       service:
         name: '{{ item.name }}'
@@ -13,6 +14,6 @@
 
 
     - name: SERVICES create user for service SMB
-      shell: "(echo {{ item.smbpasswd }}; echo {{ item.smbpasswd }}) | smbpasswd -s -a {{ item.name }}"
-      loop:
-        - { name: 'piserver', smbpasswd: 'pipass'}
+      shell: "(echo {{ piserver_password }}; echo {{ piserver_password }}) | smbpasswd -s -a {{ piserver_username }}"
+#      loop:
+#        - { name: 'piserver', smbpasswd: 'pipass'}

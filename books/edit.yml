@@ -1,6 +1,7 @@
 ---
 - hosts: all
   tasks:
+    - include_vars: ../vars/global.yml
     - name: EDIT stop service transmission
       service:
         name: transmission-daemon
@@ -21,8 +22,8 @@
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-whitelist":', line: '    "rpc-whitelist": "192.168.0.*",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "speed-limit-up":', line: '    "speed-limit-up": "25",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "speed-limit-up-enabled":', line: '    "speed-limit-up-enabled": true,' }
-        - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-username":', line: '    "rpc-username": "pi",' }
-        - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-password":', line: '    "rpc-password": "pipass",' }
+        - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-username":', line: '    "rpc-username": "{{ piserver_username }}",' }
+        - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-password":', line: '    "rpc-password": "{{ piserver_password }}",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "umask":', line: '    "umask": "2",' }
         - { path: '/root/.vnc/config.d/vncserver-x11', regexp: '^AdminPassword=', line: 'AdminPassword=20002602ce080a9a238f6ae20ac6bb98' }
         - { path: '/root/.vnc/config.d/vncserver-x11', regexp: '^Password=', line: 'Password=20002602ce080a9a238f6ae20ac6bb98' }

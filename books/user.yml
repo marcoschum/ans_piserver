@@ -1,10 +1,11 @@
 ---
 - hosts: all
   tasks:
+    - include_vars: ../vars/global.yml    
     - name: USER appending to group
       user: name={{ item.user }}
             groups={{ item.group }}
             shell=/bin/bash
             append=yes
       loop:
-        - { user: 'pi', group: 'debian-transmission' }
+        - { user: {{ piserver_username }}, group: 'debian-transmission' }
