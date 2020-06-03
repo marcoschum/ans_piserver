@@ -12,3 +12,4 @@
 # TODO:
 # smbpasswd -a pi # set password for user pi for smb
 # make sure smb.conf will be replaced
+# finish cgi-bin python file to diskusage readable on the website
