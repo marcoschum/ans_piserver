@@ -29,3 +29,7 @@
         - { path: '/root/.vnc/config.d/vncserver-x11', regexp: '^Password=', line: 'Password=20002602ce080a9a238f6ae20ac6bb98' }
         - { path: '/root/.vnc/config.d/vncserver-x11', regexp: '^Authentication=', line: 'Authentication=VncAuth' }
         - { path: '/root/.vnc/config.d/vncserver-x11', regexp: '^ConnNotifyTimeout=', line: 'ConnNotifyTimeout=0' }
+        - { path: '/etc/dhcpcd.conf', regexp: 'EOF', line: 'interface\ wlan0' }
+        - { path: '/etc/dhcpcd.conf', regexp: 'EOF', line: 'static ip_address=192.168.200/24' }
+        - { path: '/etc/dhcpcd.conf', regexp: 'EOF', line: 'static routers=192.168.1.1' }
+        - { path: '/etc/dhcpcd.conf', regexp: 'EOF', line: 'static domain_name_servers=192.168.1.1 8.8.8.8' }
