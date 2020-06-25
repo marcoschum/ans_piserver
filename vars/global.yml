@@ -1,3 +1,6 @@
 piserver_username: piserver
 piserver_password: pipass
-piserver_ip: 192.168.0.25
+piserver_ip: 192.168.1.200
+piserver_netmask: 24
+piserver_gateway: 192.168.1.1
+piserver_subnet_3: 192.168.1
