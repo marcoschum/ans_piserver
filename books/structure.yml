@@ -15,3 +15,4 @@
         - { path: '/data/transmission', mode: '0770', owner: 'debian-transmission', group: 'debian-transmission'}
         - { path: '/data/transmission/inprogress', mode: '0770', owner: 'debian-transmission', group: 'debian-transmission'}
         - { path: '/data/transmission/complete', mode: '0770', owner: 'debian-transmission', group: 'debian-transmission'}
+        - { path: '/var/www/html/media', mode: '0770', owner: 'www-data', group: 'www-data'}

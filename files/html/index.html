@@ -1,12 +1,46 @@
 <html>
   <head>
     <title>PiServer</title>
+		<style>
+		 .title {
+			 font-size: 20pt;
+		 }
+		 .section {
+			 margin: 20px;
+			 padding: 10px;
+			 background-color: lightgrey;
+		 }
+		 .button {
+		    text-decoration: none;
+		    color: initial;
+				border: none;
+				display: inline-block;
+				padding: 16px;
+				float: left;
+				vertical-align: middle;
+				overflow: hidden;
+				text-decoration: none;
+				color: inherit;
+				font-size: 16pt;
+				text-align: center;
+				cursor: pointer;
+				white-space: nowrap;
+			}
+			.button:hover {
+				background-color: #757575;
+			}
+		</style>
   </head>
-  <body>
-    <h1>Services:</h1>
-    <a href="/" onclick="javascript:event.target.port=9091">Transmission</a><br>
-    <a href="/" onclick="javascript:event.target.port=9091">Phpmyadmin</a><br>
-    <a href="/" onclick="javascript:event.target.port=9091">Repository</a><br>
-    <a href="/" onclick="javascript:event.target.port=9091">Picam</a><br>
+  <body style="background-color: #b7b7b7;">
+		<section class="section">
+	    <center>
+				<h1 class="title">PiServer</h1>
+		    <button><a href="/" class="button" onclick="javascript:event.target.port=9091">Transmission</a></button>
+		    <button><a href="media/center.php" class="button" >Media Center</a></button>
+		    <button><a href="/" class="button" onclick="javascript:event.target.port=9091">Phpmyadmin</a></button>
+		    <button><a href="/" class="button" onclick="javascript:event.target.port=9091">Repository</a></button>
+		    <button><a href="/" class="button" onclick="javascript:event.target.port=9091">Picam</a></button>
+			</center>
+		</section>
   </body>
 </html>
