@@ -8,15 +8,21 @@ echo "
 <html>
 <head>
 <style>
-@media only screen and (max-width: 1000px) {
-  .button {
-    font-size: 45pt;
+  @media only screen and (max-width: 1000px) {
+    .button {
+      font-size: 45pt;
+    }
   }
-}
- .button {
-  margin-left: 25px;
-  background-color: #dcfdff;
-}
+
+  .button {
+    margin-left: 25px;
+    margin-bottom: -10px;
+    background-color: #dcfdff;
+  }
+
+  .button:hover {
+    background-color: lightgreen;
+  }
 </style>
 </head>
 <body>";
@@ -47,12 +53,13 @@ function printButton($item, $mode){
 	$ext = (isset(pathinfo($item)['extension']) ? pathinfo($item)['extension'] : false );
 	if (in_array($ext, $endings)) {
 		$name = str_replace($source, "", $item);
+		$dirname = str_replace($source, "", pathinfo($item)['dirname']);
 		if ($mode){
-			echo "<h1>" . str_replace($source, "", pathinfo($item)['dirname']) . "</h1>";
+			echo "<h1>$dirname</h1>";
 		}
 		echo "<form action=\"player.php\" method=\"get\">";
 		echo "<input type=\"hidden\" name=\"path\" value=\"$item\" />";
-		echo "<input class=\"button\" type=\"submit\" value=\"$name\"/>";
+		echo "<input class=\"button\" type=\"submit\" value=\"" .  str_replace($dirname . "/" , "", $name) . "\"/>";
 		echo "</form>";
 
 	}
