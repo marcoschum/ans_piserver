@@ -1,46 +1,67 @@
 <html>
-  <head>
-    <title>PiServer</title>
-		<style>
-		 .title {
-			 font-size: 20pt;
-		 }
-		 .section {
-			 margin: 20px;
-			 padding: 10px;
-			 background-color: lightgrey;
-		 }
-		 .button {
-		    text-decoration: none;
-		    color: initial;
-				border: none;
-				display: inline-block;
-				padding: 16px;
-				float: left;
-				vertical-align: middle;
-				overflow: hidden;
-				text-decoration: none;
-				color: inherit;
-				font-size: 16pt;
-				text-align: center;
-				cursor: pointer;
-				white-space: nowrap;
-			}
-			.button:hover {
-				background-color: #757575;
-			}
-		</style>
-  </head>
-  <body style="background-color: #b7b7b7;">
-		<section class="section">
-	    <center>
-				<h1 class="title">PiServer</h1>
-		    <button><a href="/" class="button" onclick="javascript:event.target.port=9091">Transmission</a></button>
-		    <button><a href="media/center.php" class="button" >Media Center</a></button>
-		    <button><a href="/" class="button" onclick="javascript:event.target.port=9091">Phpmyadmin</a></button>
-		    <button><a href="/" class="button" onclick="javascript:event.target.port=9091">Repository</a></button>
-		    <button><a href="/" class="button" onclick="javascript:event.target.port=9091">Picam</a></button>
-			</center>
-		</section>
-  </body>
+
+<head>
+  <title>PiServer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .title {
+      font-size: 60pt;
+    }
+
+    .section {
+      margin: 20px;
+      padding: 10px;
+      background-color: lightgrey;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+
+    .center {
+      background-color: green;
+      width: 100%;
+    }
+
+    .link {
+      text-decoration: none;
+      font-size: 42pt;
+      color: black;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      background-color: #dcfdff;
+      border: 1 black;
+      padding: 14px 28px;
+      color: initial;
+      vertical-align: middle;
+      overflow: hidden;
+      text-decoration: none;
+      text-align: center;
+			cursor: pointer;
+			white-space: nowrap;
+		}
+
+		.button:hover {
+      box-shadow: 0 1px 4px 0, 0 1px 4px 0;
+			background-color: lightgreen;
+		}
+  </style>
+</head>
+
+<body style="background-color: #b7b7b7;">
+  <section class="section">
+    <center>
+      <h1 class="title">PiServer</h1>
+      <button class="button"><a class="link" href="/" onclick="javascript:event.target.port=9091">Transmission</a></button><br>
+      <button class="button"><a class="link" href="media/center.php">Media Center</a></button><br>
+      <button class="button"><a class="link" href="/" onclick="javascript:event.target.port=9091">Phpmyadmin</a></button><br>
+      <button class="button"><a class="link" href="/" onclick="javascript:event.target.port=9091">Repository</a></button><br>
+      <button class="button"><a class="link" href="/" onclick="javascript:event.target.port=9091">Picam</a></button><br>
+    </center>
+  </section>
+</body>
+
 </html>
