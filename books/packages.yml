@@ -19,6 +19,7 @@
         - { name: 'xinit', state: 'latest'}
         - { name: 'xserver-xorg', state: 'latest'}
         - { name: 'xrdp', state: 'latest'}
+        - { name: 'mariadb-server', state: 'latest'}
 
     - name: PACKAGES autoremove
       apt:
