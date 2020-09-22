@@ -14,8 +14,8 @@
     echo "Free disk space on '/data' : " . sprintf('%1.2f' , $bytes_disk / pow($base,$class_disk)) . ' ' . $si_prefix[$class_disk] . '<br />';
 
 
-    echo "CPU Temp: " . ($output_cpu / 1000) . " °C<br>";
-    echo "GPU Temp: $output_gpu";
+    echo "CPU Temp: " . ($output_cpu / 1000) . " °C <br />";
+    echo "GPU Temp: $output_gpu" . "<br />";
 
     echo "<button onClick=\"window.location.reload();\">reload</button>";
 		echo "</center>";
