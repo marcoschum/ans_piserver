@@ -3,6 +3,7 @@
 <head>
   <title>Status</title>
   <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 </body>
 

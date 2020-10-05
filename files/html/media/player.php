@@ -1,3 +1,10 @@
+<html>
+
+<head>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+</body>
+
 <?php
 
 include "stream.php";
@@ -8,3 +15,5 @@ $stream = new VideoStream($filePath);
 $stream->start();
 
 ?>
+</body>
+</html>

@@ -7,6 +7,8 @@ $endings = array('avi', 'mkv', 'mp4', 'flv');
 echo "
 <html>
 <head>
+<link rel=\"icon\" type=\"image/png\" href=\"assets/favicon.png\">
+<title>Center</title>
 <style>
   @media only screen and (max-width: 1000px) {
     .button {
