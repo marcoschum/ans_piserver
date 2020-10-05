@@ -1,0 +1,65 @@
+@media only screen and (max-width: 1000px) {
+  .button {
+    display: block;
+    width: 100%;
+    background-color: #dcfdff;
+    padding: 14px 28px;
+    color: initial;
+    height: 150px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    font-size: 45pt;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+}
+
+.title {
+  font-size: 60pt;
+}
+
+.section {
+  height: 100%;
+  padding: 15px;
+  background-color: lightgrey;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.link {
+  text-decoration: none;
+  font-size: 42pt;
+  color: black;
+}
+
+@media only screen and (min-width: 1000px) {
+  .button {
+    display: block;
+    width: 50%;
+    background-color: #dcfdff;
+    padding: 5px 28px;
+    color: initial;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30pt;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+}
+
+ .button:hover {
+   box-shadow: 0 1px 4px 0, 0 1px 4px 0;
+   background-color: lightgreen;
+ }

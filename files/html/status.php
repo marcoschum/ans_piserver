@@ -1,3 +1,11 @@
+<html>
+
+<head>
+  <title>Status</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+</body>
+
 <?php
     $bytes_root = disk_free_space("/");
     $bytes_disk = disk_free_space("/data");
@@ -7,7 +15,6 @@
     $class_disk = min((int)log($bytes_disk , $base) , count($si_prefix) - 1);
 		$output_cpu = shell_exec("/bin/cat /sys/class/thermal/thermal_zone0/temp");
 		$output_gpu = shell_exec("/opt/vc/bin/vcgencmd measure_temp");
-
 
 		echo "<center>";
     echo "Free disk space on '/' : " . sprintf('%1.2f' , $bytes_root / pow($base,$class_root)) . ' ' . $si_prefix[$class_root] . '<br />';
@@ -20,3 +27,6 @@
     echo "<button onClick=\"window.location.reload();\">reload</button>";
 		echo "</center>";
 ?>
+
+</body>
+</html>
