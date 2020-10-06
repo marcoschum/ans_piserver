@@ -12,8 +12,5 @@
         - { name: 'transmission-daemon', state: 'started', enabled: 'yes'}
         - { name: 'apache2', state: 'started', enabled: 'yes'}
 
-
     - name: SERVICES create user for service SMB
       shell: "(echo {{ piserver_password }}; echo {{ piserver_password }}) | smbpasswd -s -a {{ piserver_username }}"
-#      loop:
-#        - { name: 'piserver', smbpasswd: 'pipass'}

@@ -5,7 +5,7 @@
     - name: NETWORK configuring eth
       nmcli:
         conn_name: "System {{item.conn}}"
-        ifname: {{item.conn}}
+        ifname: {{ item.conn }}
         type: ethernet
         state: present
         autoconnect: yes

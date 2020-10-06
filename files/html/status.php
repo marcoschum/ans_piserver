@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
   </head>
-  <body style="background-color: #b7b7b7;">
+  <body>
     <section class="section">
       <center>
         <h1 class="title">Status</h1>
@@ -22,7 +22,6 @@
           echo "<table>";
           echo "<tr><th>Free disk space on '/'</th><td>" . sprintf('%1.2f' , $bytes_root / pow($base,$class_root)) . ' ' . $si_prefix[$class_root] . '</td></tr>';
           echo "<tr><th>Free disk space on '/data'</th><td>" . sprintf('%1.2f' , $bytes_disk / pow($base,$class_disk)) . ' ' . $si_prefix[$class_disk] . '</td></tr>';
-
 
           echo "<tr><th>CPU Temp</th><td>" . ($output_cpu / 1000) . " °C </td></tr>";
           echo "<tr><th>GPU Temp</th><td>$output_gpu</td></tr>";

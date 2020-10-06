@@ -25,7 +25,7 @@
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-username":', line: '    "rpc-username": "{{ piserver_username }}",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-password":', line: '    "rpc-password": "{{ piserver_password }}",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "umask":', line: '    "umask": "2",' }
-        - { path: '/etc/dhcpcd.conf', regexp: '^interface', line: 'interface wlan0' }
+        - { path: '/etc/dhcpcd.conf', regexp: '^interface', line: 'interface {{ piserver_interface }}' }
         - { path: '/etc/dhcpcd.conf', regexp: '^static\ ip_address', line: 'static ip_address={{ piserver_ip }}/{{ piserver_netmask }}' }
         - { path: '/etc/dhcpcd.conf', regexp: '^static\ routers', line: 'static routers={{ piserver_gateway }}' }
         - { path: '/etc/dhcpcd.conf', regexp: '^static\ domain\_name\_servers', line: 'static domain_name_servers={{ piserver_gateway }} 8.8.8.8' }

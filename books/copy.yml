@@ -3,9 +3,10 @@
   vars:
     files_repo: ../files
   tasks:
+    - include_vars: ../vars/global.yml
     - name: COPY copy files
       copy:
-        src: "{{ files_repo }}/{{ item.file }}"
+        src: "{{ files_repo }}/conf/{{ item.file }}"
         dest: "{{ item.dest }}"
         mode: "{{ item.mode }}"
         owner: "{{ item.owner }}"
@@ -27,3 +28,9 @@
         owner: "www-data"
         group: "www-data"
         recurse: yes
+
+    - name: COPY replace variables in files
+      replace:
+        dest: /var/www/html/index.html
+        regexp: '@IP@'
+        replace: '{{ piserver_ip }}'
