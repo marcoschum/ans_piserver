@@ -19,12 +19,17 @@
 
 * {
   box-sizing: border-box;
+  font-size: 24pt;
 }
 
 body {
   padding: 20px;
 }
 
+th {
+  text-align: right;
+  padding-right: 30px;
+}
 .title {
   font-size: 60pt;
 }

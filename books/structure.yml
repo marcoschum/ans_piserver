@@ -1,6 +1,7 @@
 ---
 - hosts: all
   tasks:
+    - include_vars: ../vars/global.yml
     - name: STRUCTURE create dirs
       file:
         path:  '{{ item.path }}'
@@ -11,7 +12,7 @@
       loop:
         - { path: '/data', mode: '0777', owner: 'root', group: 'root'}
         - { path: '/data/config', mode: '0777', owner: 'root', group: 'root'}
-        - { path: '/data/upload', mode: '0770', owner: 'piserver', group: 'piserver'}
+        - { path: '/data/upload', mode: '0770', owner: '{{ piserver_username }}', group: '{{ piserver_username }}'}
         - { path: '/data/transmission', mode: '0770', owner: 'debian-transmission', group: 'debian-transmission'}
         - { path: '/data/transmission/inprogress', mode: '0770', owner: 'debian-transmission', group: 'debian-transmission'}
         - { path: '/data/transmission/complete', mode: '0770', owner: 'debian-transmission', group: 'debian-transmission'}
