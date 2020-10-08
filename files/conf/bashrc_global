@@ -9,6 +9,5 @@ function set_title()
 }
 
 # system
-alias pdf="okular"
 alias ll='ls -la --color=auto'
 alias vi='vim'
