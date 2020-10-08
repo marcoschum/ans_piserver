@@ -12,16 +12,18 @@
 - additional hard drive or USB Stick attached to Raspberry
 
 ## Installation
-- Install Ansible + git (on your raspberry)
+Install Ansible and git on your raspberry
 ```bash
 apt get install ansible git
 ```
-- clone git repo
+Clone git repo and change into cloned one
 ```bash
 git clone https://github.com/marcoschum/ans_piserver
+cd ans_piserver
 ```
 
-## Run Ansible locally (fix command)
+## Run Ansible locally
+Apply Ansible configuration by running `setup.yml` locally
 ```bash
-sudo ansible-playbook -i inventory -b -u ansible books/copy.yml
+sudo ansible-playbook --connection=local --inventory=127.0.0.1, setup.yml
 ```
