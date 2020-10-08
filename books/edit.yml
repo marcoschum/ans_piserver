@@ -20,7 +20,7 @@
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "incomplete-dir":', line: '    "incomplete-dir": "/data/transmission/inprogress",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "incomplete-dir-enabled":', line: '    "incomplete-dir-enabled": true,' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-whitelist":', line: '    "rpc-whitelist": "{{ piserver_subnet_3 }}.*",' }
-        - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "speed-limit-up":', line: '    "speed-limit-up": "25",' }
+        - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "speed-limit-up":', line: '    "speed-limit-up": "0",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "speed-limit-up-enabled":', line: '    "speed-limit-up-enabled": true,' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-username":', line: '    "rpc-username": "{{ piserver_username }}",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-password":', line: '    "rpc-password": "{{ piserver_password }}",' }
@@ -29,7 +29,9 @@
         - { path: '/etc/dhcpcd.conf', regexp: '^static\ ip_address', line: 'static ip_address={{ piserver_ip }}/{{ piserver_netmask }}' }
         - { path: '/etc/dhcpcd.conf', regexp: '^static\ routers', line: 'static routers={{ piserver_gateway }}' }
         - { path: '/etc/dhcpcd.conf', regexp: '^static\ domain\_name\_servers', line: 'static domain_name_servers={{ piserver_gateway }} 8.8.8.8' }
-        - { path: '/root/.vnc/config.d/vncserver-x11', regexp: '^AdminPassword=', line: 'AdminPassword=20002602ce080a9a238f6ae20ac6bb98' }
-        - { path: '/root/.vnc/config.d/vncserver-x11', regexp: '^Password=', line: 'Password=20002602ce080a9a238f6ae20ac6bb98' }
-        - { path: '/root/.vnc/config.d/vncserver-x11', regexp: '^Authentication=', line: 'Authentication=VncAuth' }
-        - { path: '/root/.vnc/config.d/vncserver-x11', regexp: '^ConnNotifyTimeout=', line: 'ConnNotifyTimeout=0' }
+          
+    - name: EDIT replace @IP@ with ip
+      lineinfile:
+        path: /var/www/html/index.html
+        regexp: '@IP@'
+        line: "{{ piserver_ip }}"
