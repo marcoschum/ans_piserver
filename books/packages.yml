@@ -10,15 +10,9 @@
         - { name: 'transmission-daemon', state: 'latest'}
         - { name: 'samba', state: 'latest'}
         - { name: 'samba-common-bin', state: 'latest'}
-        - { name: 'chromium-browser', state: 'latest'}
         - { name: 'apache2', state: 'latest'}
-        - { name: 'ffmpeg', state: 'latest'}
         - { name: 'vim', state: 'latest'}
         - { name: 'wget', state: 'latest'}
-        - { name: 'raspberrypi-ui-mods', state: 'latest'}
-        - { name: 'xinit', state: 'latest'}
-        - { name: 'xserver-xorg', state: 'latest'}
-        - { name: 'xrdp', state: 'latest'}
         - { name: 'mariadb-server', state: 'latest'}
 
     - name: PACKAGES autoremove
