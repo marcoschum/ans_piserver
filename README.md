@@ -4,8 +4,7 @@
 - Apache Webserver
 - PHP Media Center to watch downloaded videos
 - Samba Daemon to access downloaded files via Windows Share
-- MySQL Database
-- PHPmyAdmin interface
+- MariaDB Database
 
 ## Prerequisites
 - Raspberry PI with network access
@@ -26,4 +25,14 @@ cd ans_piserver
 Apply Ansible configuration by running `setup.yml` locally
 ```bash
 sudo ansible-playbook --connection=local --inventory=127.0.0.1, setup.yml
+```
+
+## Install PHPmyAdmin interface
+Navigate to version under https://www.phpmyadmin.net/downloads/ and copy the link to the latest version.
+```bash
+wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-english.tar.gz
+tar -xvf phpMyAdmin-5.0.2-english.tar.gz
+mkdir -p /var/www/html/pma
+mv phpmyadmin /var/www/html/pma
+systemctl restart apache2
 ```
