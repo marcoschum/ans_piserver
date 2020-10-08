@@ -22,4 +22,6 @@ git clone https://github.com/marcoschum/ans_piserver
 ```
 
 ## Run Ansible locally (fix command)
+```bash
 sudo ansible-playbook -i inventory -b -u ansible books/copy.yml
+```
