@@ -2,42 +2,23 @@
 - hosts: all
   tasks:
     - include_vars: ../vars/global.yml
-<<<<<<< HEAD
     - name: NETWORK configuring interface file dhcpcd.conf
       copy:
-        src: "{{ files_repo }}/conf/dhcpcd.conf"
+        src: "../files/conf/dhcpcd.conf"
         dest: "/etc/dhcpcd.conf"
         mode: "664"
         owner: "root"
         group: "netdev"
 
     - name: NETWORK replace variables in dhcpcd.conf
-        lineinfile:
-          path: /etc/dhcpcd.conf
-          regexp: '@IP@'
-          line: "{{ piserver_ip }}"
-        lineinfile:
-          path: /etc/dhcpcd.conf
-          regexp: '@NETMASK@'
-          line: "{{ piserver_netmask }}"
-        lineinfile:
-          path: /etc/dhcpcd.conf
-          regexp: '@INTERFACE@'
-          line: "{{ piserver_interface }}"
-        lineinfile:
-          path: /etc/dhcpcd.conf
-          regexp: '@GATEWAY@'
-          line: "{{ piserver_gateway }}"
-=======
-    - name: NETWORK configuring interface
-      nmcli:
-        conn_name: "System {{item.conn}}"
-        ifname: "{{ item.conn }}"
-        type: ethernet
+      lineinfile:
+        path: /etc/dhcpcd.conf
+        regexp: "{{ item.regexp }}"
+        line: "{{ item.line }}"
         state: present
-        autoconnect: yes
-        ip4: "{{ item.ipv4 }}"
-        gw4: "{{ item.gw4 }}"
       loop:
-        - { conn: '{{ piserver_interface }}', ipv4: '{{ piserver_ip }}', gw4: '{{ piserver_gateway }}' }
->>>>>>> d441225d64dd8b33d707d71005a7458e295a789d
+        - { regexp: "^interface/", line: "interface {{ piserver_interface }}" }
+        - { regexp: '^static\ ip_address=/', line: "static\ ip_address={{ piserver_ip }}/{{ piserver_netmask }}" }
+        - { regexp: '^static\ routers=/', line: "static\ ip_address={{ piserver_gateway }}" }
+        - { regexp: '^static\ domain_name_servers=/', line: "static\ domain_name_servers={{ piserver_gateway }}\ 8.8.8.8" }
+
