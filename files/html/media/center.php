@@ -8,10 +8,11 @@ echo "
 <html>
 <head>
 <link rel=\"stylesheet\" href=\"../css/center.css\">
-<link rel=\"icon\" type=\"image/png\" href=\"assets/favicon.png\">
+<link rel=\"icon\" type=\"image/png\" href=\"../assets/favicon.png\">
 <title>Center</title>
 </head>
-<body>";
+<body>
+<section class=\"section\">";
 
 function getDirContents($dir, &$results = array()) {
     $oldbasedir = "";

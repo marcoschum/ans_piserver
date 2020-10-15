@@ -10,7 +10,7 @@
       overflow: hidden;
       text-decoration: none;
       text-align: center;
-      font-size: 45pt;
+      font-size: 30pt;
       cursor: pointer;
       white-space: nowrap;
     }
@@ -36,7 +36,6 @@
   }
   
   .section {
-    height: 100%;
     padding: 15px;
     background-color: lightgrey;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -51,19 +50,15 @@
   @media only screen and (min-width: 1000px) {
     .button {
       display: block;
-      width: 50%;
       background-color: #dcfdff;
-      padding: 5px 28px;
-      color: initial;
-      vertical-align: middle;
       overflow: hidden;
       text-decoration: none;
       text-align: center;
-      font-size: 30pt;
+      font-size: 15pt;
       cursor: pointer;
       white-space: nowrap;
       margin-left: 25px;
-      margin-bottom: -10px;
+      margin-bottom: -15px;
     }
   }
   
