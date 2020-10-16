@@ -19,6 +19,6 @@
       loop:
         - { regexp: "^interface/", line: "interface {{ piserver_interface }}" }
         - { regexp: '^static\ ip_address=/', line: "static\ ip_address={{ piserver_ip }}/{{ piserver_netmask }}" }
-        - { regexp: '^static\ routers=/', line: "static\ ip_address={{ piserver_gateway }}" }
+        - { regexp: '^static\ routers=/', line: "static\ routers={{ piserver_gateway }}" }
         - { regexp: '^static\ domain_name_servers=/', line: "static\ domain_name_servers={{ piserver_gateway }}\ 8.8.8.8" }
 
