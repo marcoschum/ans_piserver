@@ -35,6 +35,7 @@ ssh pi@10.42.0.181
 Now that you are on your Raspberry, to setup your wifi with passphrase, follow the guide at
 (https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 
+
 ## Installation
 Install Ansible and git on your raspberry
 ```bash
@@ -45,6 +46,9 @@ Clone git repo and change into cloned one
 git clone https://github.com/marcoschum/ans_piserver
 cd ans_piserver
 ```
+
+## Before running Ansible
+- __Make sure you adjust the settings under `vars/global.yml` according to your needs!__
 
 ## Run Ansible locally
 Apply Ansible configuration by running `setup.yml` locally
