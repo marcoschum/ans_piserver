@@ -10,6 +10,22 @@
 - Raspberry PI with network access
 - additional hard drive or USB Stick attached to Raspberry
 
+# How to access raspberry to configure wlan
+- You need to be able to connect it to a machine via network cable
+in my example I'm using an Ubuntu laptop with network jack
+
+
+```bash
+cat /var/lib/mis/dnsmasq.leases
+```
+Which gives you an output like:
+`1602834200 dc:a6:32:5a:c1:84 10.42.0.181 piserver 01:dc:a6:32:5a:c1:84`
+
+```bash
+ssh pi@10.42.0.181
+```
+
+
 ## Installation
 Install Ansible and git on your raspberry
 ```bash
