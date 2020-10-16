@@ -32,6 +32,8 @@ Which gives you an output like:
 ssh pi@10.42.0.181
 ```
 
+Now that you are on your Raspberry, to setup your wifi with passphrase, follow the guide at
+(https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md)
 
 ## Installation
 Install Ansible and git on your raspberry
