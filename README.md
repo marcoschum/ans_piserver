@@ -1,19 +1,26 @@
 # Raspberry PI as a home server
-## Services
-- Transmission Daemon for torrents
-- Apache Webserver
-- PHP Media Center to watch downloaded videos
-- Samba Daemon to access downloaded files via Windows Share
-- MariaDB Database
+## Overview
+| Services  | Description |
+| ------------- | ------------- |
+| Apache Webserver  | To use for all services  |
+| Transmission Daemon  | Run torrents through transmission  |
+| PHP Media Center  | Watch downloaded videos directly in your browser  |
+| Samba Daemon  | Access downloaded files through SMB share  |
+| MariaDB Database  |  For further projects  |
 
 ## Prerequisites
 - Raspberry PI with network access
+- Installed Raspbian OS on SD card (https://www.raspbian.org/)
 - additional hard drive or USB Stick attached to Raspberry
 
-# How to access raspberry to configure wlan
-- You need to be able to connect it to a machine via network cable
-in my example I'm using an Ubuntu laptop with network jack
+## How to access raspberry to configure wlan
+You need to be able to connect it to a machine via network cable.
 
+In my example I'm using an Ubuntu laptop with network jack
+
+- Connect cable to both laptop and Raspberry
+- Set network connection to `shared connection`
+- Run following command
 
 ```bash
 cat /var/lib/mis/dnsmasq.leases
@@ -41,6 +48,13 @@ cd ans_piserver
 Apply Ansible configuration by running `setup.yml` locally
 ```bash
 sudo ansible-playbook --connection=local --inventory=127.0.0.1, setup.yml
+```
+
+## Run specific playbook again
+You can find all of them in the `books` folder.
+In this example we run copy.yml again
+```bash
+sudo ansible-playbook --connection=local --inventory=127.0.0.1, books/copy.yml
 ```
 
 ## Install PHPmyAdmin interface
