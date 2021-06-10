@@ -1,69 +1,65 @@
+
+.button {
+  width: 100%;
+  text-align: left;
+  font-size: 30pt;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  background-color: #dcfdff;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  background-color: white;
+  margin: 20px;
+  left: 5%;
+  right: 5%;
+}
+
+.section {
+  padding: 10px;
+  margin-bottom: 30px;
+  background-color: #d1cfcf;
+  -webkit-box-shadow: 0 0 4px 4px #d1cfcf;
+  -moz-box-shadow: 0 0 4px 4px #d1cfcf;
+  box-shadow: 0 0 4px 4px #d1cfcf;
+}
+
+h1 {
+  overflow-x: hidden;
+}
+
+
 @media only screen and (max-width: 1000px) {
+  .button {
+    display: block;
+    padding: 14px 28px;
+    height: 150px;
+    margin-top: -10px;
+    font-size: 30pt;
+    white-space: nowrap;
+  }
+  h1 {
+    font-size: 40pt;
+  }
+
+}
+
+  @media only screen and (min-width: 1001px) {
     .button {
-      display: block;
-      width: 100%;
       background-color: #dcfdff;
-      padding: 14px 28px;
-      color: initial;
-      height: 150px;
-      vertical-align: middle;
-      overflow: hidden;
       text-decoration: none;
-      text-align: center;
-      font-size: 30pt;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-  }
-  
-  
-  * {
-    box-sizing: border-box;
-    /* font-size: 24pt; */
-  }
-  
-  body {
-    background-color: #b7b7b7;
-    padding: 20px;
-  }
-  
-  th {
-    text-align: right;
-    padding-right: 30px;
-  }
-  .title {
-    font-size: 60pt;
-  }
-  
-  .section {
-    padding: 15px;
-    background-color: lightgrey;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  }
-  
-  .link {
-    text-decoration: none;
-    font-size: 42pt;
-    color: black;
-  }
-  
-  @media only screen and (min-width: 1000px) {
-    .button {
-      display: block;
-      background-color: #dcfdff;
-      overflow: hidden;
-      text-decoration: none;
-      text-align: center;
       font-size: 15pt;
       cursor: pointer;
-      white-space: nowrap;
-      margin-left: 25px;
       margin-bottom: -15px;
     }
   }
-  
+
    .button:hover {
      box-shadow: 0 1px 4px 0, 0 1px 4px 0;
      background-color: lightgreen;
    }
-  

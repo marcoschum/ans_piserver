@@ -12,27 +12,27 @@ echo "
 <title>Center</title>
 </head>
 <body>
-<section class=\"section\">";
+<section class=\"section\">
+<h1>MEDIA CENTER</h1>";
 
 function getDirContents($dir, &$results = array()) {
-    $oldbasedir = "";
-    $files = scandir($dir);
+  $oldbasedir = "";
+  $files = scandir($dir);
 
-    foreach ($files as $key => $value) {
-        $path = realpath($dir . DIRECTORY_SEPARATOR . $value);
-	$basedir = pathinfo($path)['dirname'];
-	if (!is_dir($path)) {
-	    if ($basedir != $oldbasedir){
-	      printButton($path, true);
-	    } else {
-	      printButton($path, false);
-	    }
-	    $oldbasedir = $basedir;
-        } else if ($value != "." && $value != "..") {
-            getDirContents($path, $results);
-        }
+  foreach ($files as $key => $value) {
+    $path = realpath($dir . DIRECTORY_SEPARATOR . $value);
+    $basedir = pathinfo($path)['dirname'];
+    if (!is_dir($path)) {
+      if ($basedir != $oldbasedir){
+        printButton($path, true);
+      } else {
+        printButton($path, false);
+      }
+      $oldbasedir = $basedir;
+    } else if ($value != "." && $value != "..") {
+      getDirContents($path, $results);
     }
-
+  }
 }
 
 function printButton($item, $mode){
@@ -42,6 +42,8 @@ function printButton($item, $mode){
 		$name = str_replace($source, "", $item);
 		$dirname = str_replace($source, "", pathinfo($item)['dirname']);
 		if ($mode){
+      echo "</section>";
+      echo "<section class=\"section\">";
 			echo "<h1>$dirname</h1>";
 		}
 		echo "<form action=\"player.php\" method=\"get\">";
@@ -56,7 +58,8 @@ function printButton($item, $mode){
 getDirContents($source);
 
 
-	     echo "</body>
+  echo "</section>";
+	echo "</body>
 </html>";
 
 ?>
