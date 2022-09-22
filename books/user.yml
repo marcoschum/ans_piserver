@@ -3,11 +3,12 @@
   tasks:
     - include_vars: ../vars/global.yml
     - name: USER append to group
-      user: name={{ item.user }}
-            groups={{ item.group }}
-            shell=/bin/bash
-            append=yes
+      user: 
+        name: "{{ item.user }}"
+        groups: "{{ item.group }}"
+        shell: "/bin/bash"
+        append: yes
       loop:
-        - { user: {{ piserver_username }}, group: 'debian-transmission' }
-        - { user: {{ piserver_username }}, group: 'sambashare' }
-        - { user: www-data, group: 'debian-transmission' }
+        - { user: "{{ piserver_username }}", group: 'debian-transmission' }
+        - { user: "{{ piserver_username }}", group: 'sambashare' }
+        - { user: "www-data", group: 'debian-transmission' }
