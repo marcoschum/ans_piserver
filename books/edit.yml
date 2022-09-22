@@ -22,7 +22,7 @@
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-whitelist":', line: '    "rpc-whitelist": "{{ piserver_subnet_3 }}.*",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "speed-limit-up":', line: '    "speed-limit-up": "0",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "speed-limit-up-enabled":', line: '    "speed-limit-up-enabled": true,' }
-        - { path: '/etc/transmission-daemo n/settings.json', regexp: '^    "rpc-username":', line: '    "rpc-username": "{{ piserver_username }}",' }
+        - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-username":', line: '    "rpc-username": "{{ piserver_username }}",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "rpc-password":', line: '    "rpc-password": "{{ piserver_password }}",' }
         - { path: '/etc/transmission-daemon/settings.json', regexp: '^    "umask":', line: '    "umask": "2",' }
         - { path: '/etc/dhcpcd.conf', regexp: '^interface', line: 'interface {{ piserver_interface }}' }
